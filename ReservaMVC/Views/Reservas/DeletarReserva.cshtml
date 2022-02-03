@@ -1,0 +1,9 @@
+﻿@model Reserva
+@{
+    ViewData["Title"] = "Deletar Reserva";
+}
+
+<form asp-action="DeletarReserva" method="post">
+    <input type="hidden" value="@Model.ReservaID" name="ReservaID" />
+    <input type="image" src="/icon/close.png" />
+</form>

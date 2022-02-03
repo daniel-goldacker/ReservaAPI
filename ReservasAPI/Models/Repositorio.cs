@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ReservasAPI.Models
 {
@@ -12,9 +11,9 @@ namespace ReservasAPI.Models
             itens = new Dictionary<int, Reserva>();
             new List<Reserva>
             {
-                new Reserva {ReservaID=1, Nome = "Daniel", LocalInicioLocacao = "São Paulo", LocalFimLocacao="Lins" },
-                new Reserva {ReservaID=2, Nome = "Bruna", LocalInicioLocacao = "Campinas", LocalFimLocacao="São Paulo" },
-                new Reserva {ReservaID=3, Nome = "Bernardo", LocalInicioLocacao = "Jundiaí", LocalFimLocacao="Campinas" }
+                new Reserva {ReservaID=1, Nome = "Daniel", LocalInicioLocacao = "São Paulo", LocalFimLocacao="Lins", Veiculo = "Onix" },
+                new Reserva {ReservaID=2, Nome = "Bruna", LocalInicioLocacao = "Campinas", LocalFimLocacao="São Paulo", Veiculo = "Palio" },
+                new Reserva {ReservaID=3, Nome = "Bernardo", LocalInicioLocacao = "Jundiaí", LocalFimLocacao="Campinas", Veiculo = "Porsche" }
             }.ForEach(r => AdicionarReserva(r));
         }
         

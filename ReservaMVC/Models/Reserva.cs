@@ -1,5 +1,4 @@
-﻿using System;
-namespace ReservasAPI.Models
+﻿namespace ReservaMVC.Models
 {
     public class Reserva
     {

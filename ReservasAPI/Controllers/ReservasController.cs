@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using ReservasAPI.Models;
 
@@ -24,7 +23,8 @@ namespace ReservasAPI.Controllers
         {
             Nome = reserva.Nome,
             LocalInicioLocacao = reserva.LocalInicioLocacao,
-            LocalFimLocacao = reserva.LocalFimLocacao
+            LocalFimLocacao = reserva.LocalFimLocacao,
+            Veiculo = reserva.Veiculo
         });
 
         [HttpPut]

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Reserva>
+@{
+    ViewData["Title"] = "Todas as Reservas";
+}
+
+<a asp-action="AdicionarReserva" class="btn btn-sm btn-primary">Incluir Reserva</a>
+<a asp-action="BuscarReserva" class="btn btn-sm btn-secondary">Obter Reserva</a>
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Início</th>
+            <th>Fim</th>
+            <th>Veículo</th>
+            <th>Atualizar</th>
+            <th>Deletar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+        <tr>
+            <td>@r.ReservaID</td>
+            <td>@r.Nome</td>
+            <td>@r.LocalInicioLocacao</td>
+            <td>@r.LocalFimLocacao</td>
+            <td>@r.Veiculo</td>
+            <td>
+                <a asp-action="AlterarReserva" asp-route-id="@r.ReservaID"><img src="/icon/edit.png" /></a>
+            </td>
+            <td>
+                <form asp-action="DeletarReserva" method="post">
+                    <input type="hidden" value="@r.ReservaID" name="ReservaId" />
+                    <input type="image" src="/icon/close.png" />
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

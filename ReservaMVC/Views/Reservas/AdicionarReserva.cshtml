@@ -1,0 +1,52 @@
+﻿@model Reserva
+@{
+    ViewData["Title"] = "Adicionar Reserva";
+}
+
+<h2>Nova Reserva <a asp-action="Index" class="btn btn-sm btn-outline-success">Retornar</a></h2>
+
+<form asp-action="AdicionarReserva" method="post">
+    <div class="form-group">
+        <label for="Name">Nome:</label>
+        <input class="form-control" name="Nome" />
+    </div>
+    <div class="form-group">
+        <label for="LocalInicioLocacao">Início da Locação:</label>
+        <input class="form-control" name="LocalInicioLocacao" />
+    </div>
+    <div class="form-group">
+        <label for="LocalFimLocacao">Fim da Locação:</label>
+        <input class="form-control" name="LocalFimLocacao" />
+    </div>
+    <div class="form-group">
+        <label for="Veiculo">Veículo:</label>
+        <input class="form-control" name="Veiculo" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Nova Reserva</button>
+    </div>
+</form>
+@if (Model != null)
+{
+    <h2>Reserva</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Início</th>
+                <th>Fim</th>
+                <th>Veículo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.ReservaID</td>
+                <td>@Model.Nome</td>
+                <td>@Model.LocalInicioLocacao</td>
+                <td>@Model.LocalFimLocacao</td>
+                <td>@Model.Veiculo</td>
+            </tr>
+        </tbody>
+    </table>
+}
